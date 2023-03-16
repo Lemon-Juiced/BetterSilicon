@@ -51,7 +51,7 @@ public class BetterSilicon {
     public static void onCreativeModeTabRegister(CreativeModeTabEvent.Register event){
         BETTER_SILICON_TAB = event.registerCreativeModeTab(new ResourceLocation(BetterSilicon.MOD_ID, "better_silicon"), builder -> {
             builder.icon(() -> new ItemStack(BetterSilicon.SILICON.get()))
-                    .displayItems((features, output, hasPermissions) -> {
+                    .displayItems((features, output) -> {
                         output.accept(new ItemStack(BetterSilicon.SILICEOUS_COMPOUND.get()));
                         output.accept(new ItemStack(BetterSilicon.SILICON.get()));
                     })
