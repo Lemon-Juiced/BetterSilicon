@@ -1,0 +1,6 @@
+{
+  "parent": "block/cube_all",
+  "textures": {
+    "all": "better_silicon:block/silicon_block"
+  }
+}

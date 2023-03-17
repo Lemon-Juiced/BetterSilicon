@@ -1,0 +1,5 @@
+{
+  "variants": {
+    "": { "model": "better_silicon:block/silicon_block" }
+  }
+}

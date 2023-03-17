@@ -1,6 +1,9 @@
 package lemon_juice.better_silicon;
 
 import com.mojang.logging.LogUtils;
+import lemon_juice.better_silicon.block.ModBlocks;
+import lemon_juice.better_silicon.creativetab.CreativeTab;
+import lemon_juice.better_silicon.item.ModItems;
 import net.minecraft.client.Minecraft;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
@@ -23,41 +26,22 @@ import org.slf4j.Logger;
 @Mod(BetterSilicon.MOD_ID)
 public class BetterSilicon {
     public static final String MOD_ID = "better_silicon";
-    public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, MOD_ID);
-    public static final RegistryObject<Item> SILICEOUS_COMPOUND = ITEMS.register("siliceous_compound", () -> new Item(new Item.Properties()));
-    public static final RegistryObject<Item> SILICON = ITEMS.register("silicon", () -> new Item(new Item.Properties()));
     public static CreativeModeTab BETTER_SILICON_TAB;
 
     public BetterSilicon() {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
 
-        // Register the commonSetup method for modloading
-        modEventBus.addListener(this::commonSetup);
+        // Register Items & Blocks
+        ModItems.register(modEventBus);
+        ModBlocks.register(modEventBus);
 
-        // Register the Deferred Register to the mod event bus so items get registered
-        ITEMS.register(modEventBus);
+        // Register Creative Tab
+        modEventBus.addListener(CreativeTab::registerTabs);
 
-        // Registers Creative Tab From CreativeTabEvent
-        FMLJavaModLoadingContext.get().getModEventBus().addListener(BetterSilicon::onCreativeModeTabRegister);
-
-        // Register ourselves for server and other game events we are interested in
         MinecraftForge.EVENT_BUS.register(this);
     }
 
     private void commonSetup(final FMLCommonSetupEvent event) {
-    }
-
-    @SubscribeEvent
-    public static void onCreativeModeTabRegister(CreativeModeTabEvent.Register event){
-        BETTER_SILICON_TAB = event.registerCreativeModeTab(new ResourceLocation(BetterSilicon.MOD_ID, "better_silicon"), builder -> {
-            builder.icon(() -> new ItemStack(BetterSilicon.SILICON.get()))
-                    .displayItems((features, output) -> {
-                        output.accept(new ItemStack(BetterSilicon.SILICEOUS_COMPOUND.get()));
-                        output.accept(new ItemStack(BetterSilicon.SILICON.get()));
-                    })
-                    .title(Component.translatable("itemGroup.better_silicon"))
-                    .build();
-        });
     }
 
     @SubscribeEvent

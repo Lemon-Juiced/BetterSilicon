@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "###",
+    "###",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "better_silicon:silicon"
+    }
+  },
+  "result": {
+    "item": "better_silicon:silicon_block",
+    "count": 1
+  }
+}

@@ -1,5 +1,8 @@
 {
   "item.better_silicon.siliceous_compound": "Siliceous Compound",
   "item.better_silicon.silicon": "Silicon",
+
+  "block.better_silicon.silicon_block": "Block of Silicon",
+
   "itemGroup.better_silicon": "Better Silicon"
 }

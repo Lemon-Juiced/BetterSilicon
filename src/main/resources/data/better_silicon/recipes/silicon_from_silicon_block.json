@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "better_silicon:silicon_block"
+    }
+  ],
+  "result": {
+    "item": "better_silicon:silicon",
+    "count": 9
+  }
+}
