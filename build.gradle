@@ -4,7 +4,7 @@ plugins {
     id 'net.minecraftforge.gradle' version '5.1.+'
 }
 
-version = '1.19.4-1.1.1'
+version = '1.19.4-1.1.2'
 group = 'lemon_juice.better_silicon' // http://maven.apache.org/guides/mini/guide-naming-conventions.html
 archivesBaseName = 'better_silicon'
 
@@ -51,6 +51,10 @@ minecraft {
             // Comma-separated list of namespaces to load gametests from. Empty = all namespaces.
             property 'forge.enabledGameTestNamespaces', 'better_silicon'
 
+            // For Curios Dependency
+            property 'mixin.env.remapRefMap', 'true'
+            property 'mixin.env.refMapRemappingFile', "${buildDir}/createSrgToMcp/output.srg"
+
             mods {
                 better_silicon {
                     source sourceSets.main
@@ -66,6 +70,10 @@ minecraft {
             property 'forge.logging.console.level', 'debug'
 
             property 'forge.enabledGameTestNamespaces', 'better_silicon'
+
+            // For Curios Dependency
+            property 'mixin.env.remapRefMap', 'true'
+            property 'mixin.env.refMapRemappingFile', "${buildDir}/createSrgToMcp/output.srg"
 
             mods {
                 better_silicon {
@@ -116,30 +124,33 @@ minecraft {
 sourceSets.main.resources { srcDir 'src/generated/resources' }
 
 repositories {
-    // Put repositories for dependencies here
-    // ForgeGradle automatically adds the Forge maven and Maven Central for you
-
-    // If you have mod jar dependencies in ./libs, you can declare them as a repository like so:
-    // flatDir {
-    //     dir 'libs'
-    // }
+    maven { url = "https://maven.theillusivec4.top/"}
+    maven { url = "https://dvs1.progwml6.com/files/maven/"}
+    maven { url = "https://modmaven.dev"}
+    maven { url = "https://minecraft.curseforge.com/api/maven/"}
+    maven { url = "https://www.cursemaven.com"}
 }
 
 dependencies {
-    // Specify the version of Minecraft to use. If this is any group other than 'net.minecraft', it is assumed
-    // that the dep is a ForgeGradle 'patcher' dependency, and its patches will be applied.
-    // The userdev artifact is a special name and will get all sorts of transformations applied to it.
     minecraft 'net.minecraftforge:forge:1.19.4-45.0.9'
 
-    // Real mod deobf dependency examples - these get remapped to your current mappings
-    // implementation fg.deobf("com.tterrag.registrate:Registrate:MC${mc_version}-${registrate_version}") // Adds registrate as a dependency
+    // JEI
+    //compileOnly fg.deobf("mezz.jei:jei-1.19.3-common-api:12.2.0.16")
+    //compileOnly fg.deobf("mezz.jei:jei-1.19.3-forge-api:12.2.0.16")
+    //runtimeOnly fg.deobf("mezz.jei:jei-1.19.3-common:12.2.0.16")
+    //runtimeOnly fg.deobf("mezz.jei:jei-1.19.3-forge:12.2.0.16")
 
-    // Examples using mod jars from ./libs
-    // implementation fg.deobf("blank:coolmod-${mc_version}:${coolmod_version}")
+    // Jade
+    runtimeOnly fg.deobf("curse.maven:jade-324717:4439089")
 
-    // For more info...
-    // http://www.gradle.org/docs/current/userguide/artifact_dependencies_tutorial.html
-    // http://www.gradle.org/docs/current/userguide/dependency_management.html
+    /* Optional Dependencies */
+    // Curios Dependency
+    runtimeOnly fg.deobf("top.theillusivec4.curios:curios-forge:1.19.4-5.1.4.2")
+    compileOnly fg.deobf("top.theillusivec4.curios:curios-forge:1.19.4-5.1.4.2:api")
+    // Scalar Utils 5 Base Mod Dependency
+    runtimeOnly fg.deobf("curse.maven:scalar-utils-5-735569:4441828")
+    // Scalar Utils 5 Agriculture Addon Dependency
+    runtimeOnly fg.deobf("curse.maven:scalar-utils-5-agriculture_addon-837403:4448621")
 }
 
 // Example for how to get properties into the manifest for reading at runtime.
