@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "tag": "forge:silicon"
+    }
+  ],
+  "result": {
+    "item": "scalar_utils_agriculture_addon:silicon_fragment",
+    "count": 9
+  }
+}
