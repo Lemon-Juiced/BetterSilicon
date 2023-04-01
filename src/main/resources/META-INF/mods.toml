@@ -4,7 +4,7 @@ license="All rights reserved"
 
 [[mods]]
 modId="better_silicon"
-version="1.19.4-1.1.2"
+version="1.19.4-1.1.3"
 displayName="Better Silicon"
 logoFile="better_silicon.png"
 credits="Scalar Team"
@@ -30,6 +30,12 @@ Makes silicon much easier to attain for those mass-storage tech mods.
     modId="curios"
     mandatory=false
     versionRange="[1.19.4-5.1.4.2,)"
+    ordering="NONE"
+    side="BOTH"
+[[dependencies.better_silicon]]
+    modId="lemon_core"
+    mandatory=false # Debating making this mandatory, but I feel it would cause a lot of needless headache for players who just want the silicon
+    versionRange="[1.19.4-1.0.3,)"
     ordering="NONE"
     side="BOTH"
 [[dependencies.better_silicon]]
