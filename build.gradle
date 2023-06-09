@@ -4,7 +4,7 @@ plugins {
     id 'net.minecraftforge.gradle' version '5.1.+'
 }
 
-version = '1.19.4-1.1.5'
+version = '1.20-1.1.6'
 group = 'lemon_juice.better_silicon' // http://maven.apache.org/guides/mini/guide-naming-conventions.html
 archivesBaseName = 'better_silicon'
 
@@ -132,7 +132,7 @@ repositories {
 }
 
 dependencies {
-    minecraft 'net.minecraftforge:forge:1.19.4-45.0.66'
+    minecraft 'net.minecraftforge:forge:1.20-46.0.2'
 
     // Developer Dependencies
     // JEI
@@ -142,21 +142,21 @@ dependencies {
     //runtimeOnly fg.deobf("mezz.jei:jei-1.19.3-forge:12.2.0.16")
 
     // Jade
-    runtimeOnly fg.deobf("curse.maven:jade-324717:4439089")
+    //runtimeOnly fg.deobf("curse.maven:jade-324717:4439089")
 
     /* Optional Dependencies */
     // Curios Dependency
-    runtimeOnly fg.deobf("top.theillusivec4.curios:curios-forge:1.19.4-5.1.4.2")
-    compileOnly fg.deobf("top.theillusivec4.curios:curios-forge:1.19.4-5.1.4.2:api")
+    //runtimeOnly fg.deobf("top.theillusivec4.curios:curios-forge:1.19.4-5.1.4.2")
+    //compileOnly fg.deobf("top.theillusivec4.curios:curios-forge:1.19.4-5.1.4.2:api")
 
     // Lemon Core Dependency
-    runtimeOnly fg.deobf("curse.maven:lemon-core-840168:4469499")
+    runtimeOnly fg.deobf("curse.maven:lemon-core-840168:4574930")
 
     // Scalar Utils 5 Base Mod Dependency
-    runtimeOnly fg.deobf("curse.maven:scalar-utils-5-735569:4469539")
+    //runtimeOnly fg.deobf("curse.maven:scalar-utils-5-735569:4469539")
 
     // Scalar Utils 5 Agriculture Addon Dependency
-    runtimeOnly fg.deobf("curse.maven:scalar-utils-5-agriculture_addon-837403:4469555")
+    //runtimeOnly fg.deobf("curse.maven:scalar-utils-5-agriculture_addon-837403:4469555")
 }
 
 // Example for how to get properties into the manifest for reading at runtime.

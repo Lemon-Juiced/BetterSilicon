@@ -1,10 +1,10 @@
 modLoader="javafml"
-loaderVersion="[45,)"
+loaderVersion="[46,)"
 license="GNU General Purpose License v3 (GPLv3)"
 
 [[mods]]
 modId="better_silicon"
-version="1.19.4-1.1.5"
+version="1.20-1.1.6"
 displayName="Better Silicon"
 logoFile="better_silicon.png"
 credits="Scalar Team"
@@ -17,36 +17,12 @@ Makes silicon much easier to attain for those mass-storage tech mods.
 [[dependencies.better_silicon]]
     modId="forge"
     mandatory=true
-    versionRange="[45,)"
+    versionRange="[46,)"
     ordering="NONE"
     side="BOTH"
 [[dependencies.better_silicon]]
     modId="minecraft"
     mandatory=true
-    versionRange="[1.19.4,1.20)"
-    ordering="NONE"
-    side="BOTH"
-[[dependencies.better_silicon]]
-    modId="curios"
-    mandatory=false
-    versionRange="[1.19.4-5.1.4.2,)"
-    ordering="NONE"
-    side="BOTH"
-[[dependencies.better_silicon]]
-    modId="lemon_core"
-    mandatory=false # Debating making this mandatory, but I feel it would cause a lot of needless headache for players who just want the silicon
-    versionRange="[1.19.4-1.0.3,)"
-    ordering="NONE"
-    side="BOTH"
-[[dependencies.better_silicon]]
-    modId="scalar_utils"
-    mandatory=false
-    versionRange="[1.19.4-5.2.0,)"
-    ordering="NONE"
-    side="BOTH"
-[[dependencies.better_silicon]]
-    modId="scalar_utils_agriculture_addon"
-    mandatory=false
-    versionRange="[1.19.4-5.0.5,)"
+    versionRange="[1.20,1.21)"
     ordering="NONE"
     side="BOTH"

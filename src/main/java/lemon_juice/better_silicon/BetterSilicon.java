@@ -1,7 +1,7 @@
 package lemon_juice.better_silicon;
 
 import lemon_juice.better_silicon.block.ModBlocks;
-import lemon_juice.better_silicon.creativetab.CreativeTab;
+import lemon_juice.better_silicon.creativetab.ModCreativeTab;
 import lemon_juice.better_silicon.item.ModItems;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
@@ -24,14 +24,14 @@ public class BetterSilicon {
         ModBlocks.register(modEventBus);
 
         // Register Creative Tab
-        modEventBus.addListener(CreativeTab::registerTabs);
+        ModCreativeTab.register(modEventBus);
+        modEventBus.addListener(ModCreativeTab::registerTabs);
 
         MinecraftForge.EVENT_BUS.register(this);
     }
 
     @SubscribeEvent
-    public void onServerStarting(ServerStartingEvent event) {
-    }
+    public void onServerStarting(ServerStartingEvent event) {}
 
     @Mod.EventBusSubscriber(modid = MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
     public static class ClientModEvents {
