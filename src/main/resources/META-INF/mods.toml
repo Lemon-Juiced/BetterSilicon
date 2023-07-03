@@ -4,11 +4,10 @@ license="GNU General Purpose License v3 (GPLv3)"
 
 [[mods]]
 modId="better_silicon"
-version="1.20.1-1.1.8"
+version="1.20.1-1.1.9"
 displayName="Better Silicon"
 logoFile="better_silicon.png"
-credits="Scalar Team"
-authors="Lemon_Juiced"
+authors="Lemon_Juiced & Scalar Team"
 
 description='''
 Makes silicon much easier to attain for those mass-storage tech mods.
