@@ -1,25 +1,22 @@
 modLoader="javafml"
-loaderVersion="[47,)"
-license="GNU General Purpose License v3 (GPLv3)"
+loaderVersion="${loader_version_range}"
+license="${mod_license}"
 
 [[mods]]
-modId="better_silicon"
-version="1.20.1-1.1.9"
-displayName="Better Silicon"
+modId="${mod_id}"
+version="${mod_version}"
+displayName="${mod_name}"
 logoFile="better_silicon.png"
-authors="Lemon_Juiced & Scalar Team"
+authors="${mod_authors}"
+description='''${mod_description}'''
 
-description='''
-Makes silicon much easier to attain for those mass-storage tech mods.
-'''
-
-[[dependencies.better_silicon]]
+[[dependencies.${mod_id}]]
     modId="forge"
     mandatory=true
-    versionRange="[47,)"
+    versionRange="${neo_version_range}"
     ordering="NONE"
     side="BOTH"
-[[dependencies.better_silicon]]
+[[dependencies.${mod_id}]]
     modId="minecraft"
     mandatory=true
     versionRange="[1.20.1,1.21)"
