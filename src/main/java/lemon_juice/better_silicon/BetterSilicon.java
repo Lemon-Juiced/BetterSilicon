@@ -3,21 +3,21 @@ package lemon_juice.better_silicon;
 import lemon_juice.better_silicon.block.ModBlocks;
 import lemon_juice.better_silicon.creativetab.ModCreativeTab;
 import lemon_juice.better_silicon.item.ModItems;
-import net.minecraftforge.api.distmarker.Dist;
-import net.minecraftforge.common.MinecraftForge;
-import net.minecraftforge.event.server.ServerStartingEvent;
-import net.minecraftforge.eventbus.api.IEventBus;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
-import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
+import net.neoforged.api.distmarker.Dist;
+import net.neoforged.bus.api.IEventBus;
+import net.neoforged.bus.api.SubscribeEvent;
+import net.neoforged.fml.common.Mod;
+import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
+import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
+import net.neoforged.neoforge.common.NeoForge;
+import net.neoforged.neoforge.event.server.ServerStartingEvent;
 
 @Mod(BetterSilicon.MOD_ID)
 public class BetterSilicon {
     public static final String MOD_ID = "better_silicon";
 
-    public BetterSilicon() {
-        IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
+    public BetterSilicon(IEventBus modEventBus) {
+        modEventBus.addListener(this::commonSetup);
 
         // Register Items & Blocks
         ModItems.register(modEventBus);
@@ -27,8 +27,10 @@ public class BetterSilicon {
         ModCreativeTab.register(modEventBus);
         modEventBus.addListener(ModCreativeTab::registerTabs);
 
-        MinecraftForge.EVENT_BUS.register(this);
+        NeoForge.EVENT_BUS.register(this);
     }
+
+    private void commonSetup(final FMLCommonSetupEvent event) {}
 
     @SubscribeEvent
     public void onServerStarting(ServerStartingEvent event) {}
