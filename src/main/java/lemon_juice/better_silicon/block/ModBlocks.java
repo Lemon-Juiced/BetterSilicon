@@ -19,7 +19,6 @@ public class ModBlocks {
 
     public static final DeferredBlock<Block> SILICON_BLOCK = registerBlock("silicon_block", () -> new Block(BlockBehaviour.Properties.copy(Blocks.DIAMOND_BLOCK).requiresCorrectToolForDrops().strength(0.8F)));
 
-    /******************************** Registry ********************************/
     private static <T extends Block> DeferredBlock<Block> registerBlock(String name, Supplier<T> block) {
         DeferredBlock<Block> toReturn = BLOCKS.register(name, block);
         registerBlockItem(name, toReturn);
